@@ -36,7 +36,6 @@ public class NewVideoOutputSubmittedCommandHandler implements  CommandHandler {
 
         try {
             logger.info("Ready to process the video output.");
-            // String internalId = publisher.publish(video);
             publisher.publish(video);
             logger.info("Result [" + video.getResult()  + "]");
             logger.info("Video output has been processed.");
