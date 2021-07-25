@@ -21,7 +21,6 @@ public class FromPubSubToGcsCloudFunction implements BackgroundFunction<PubSubEv
             logger.info("Receive message event: " + message.toString());
 
             VideoOutputResult newOutputVideo = new VideoOutputResult(message.getData());
-            newOutputVideo.setFileName("tmp-file.json");
             VideoOutputProcessManager videoOutputProcessManager = new VideoOutputProcessManagerImpl();
             videoOutputProcessManager.processVideo(newOutputVideo);
 
